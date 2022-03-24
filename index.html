@@ -7,7 +7,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     </head>
     <body onload="convertTheText()">
-        <div class="header"><h1>Bold Reader</h1></div>
+        <div class="header">
+        	<div class="links"><a href="https://github.com/boldreader/boldreader" target="_blank">Source Code</a> | <a href="https://github.com/boldreader/chrome-extension" target="_blank">Experimental Chrome Extension</a></div>
+        	<h1>Bold Reader</h1>
+        </div>
         <div class="container">
             <div class="input">
                 <textarea class="inputTextarea" id="inputText" onchange="convertTheText()" onkeyup="convertTheText()">Bionic Reading is a new method facilitating the reading process by guiding the eyes through text with artificial fixation points.
@@ -34,7 +37,7 @@ In a digital world dominated by shallow forms of reading, Bionic Reading aims to
 
             for (let charPointer = 0; charPointer < inputText.length; charPointer++) {
                 const char = inputText[charPointer];
-                const isWordChar = char.match(/[a-zA-Z]/);
+                const isWordChar = char.match(/[a-zA-Z]/) !== null;
 
                 if (inWord && isWordChar) {
                     words[wordPointer] += char;
@@ -73,7 +76,7 @@ In a digital world dominated by shallow forms of reading, Bionic Reading aims to
         }
         </script>
 
-        <style>
+        <style type="text/css">
         html,
         body {
             width: 100%;
@@ -92,6 +95,10 @@ In a digital world dominated by shallow forms of reading, Bionic Reading aims to
             box-sizing: border-box;
             border-bottom: 1px solid #333;
             padding: 6px 10px;
+        }
+
+        .header .links {
+        	float:right;
         }
 
         .header h1 {
