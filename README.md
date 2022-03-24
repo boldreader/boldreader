@@ -1,6 +1,6 @@
 # Bold Reader 
 
-## Demo
+## Live Demo
 
 [See The Demo](https://boldreader.github.io/boldreader/)
 
